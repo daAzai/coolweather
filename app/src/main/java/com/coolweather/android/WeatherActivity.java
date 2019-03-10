@@ -130,8 +130,7 @@ public class WeatherActivity extends AppCompatActivity {
      */
     public void requestWeather(final String weatherId) {
 
-        //String weatherUrl = "https://free_api.heweather.com/s6/weather?location=" + weatherId + "&key=5c147652efb14e27a04e6edafd24e9d2";
-        String weatherUrl = "http://guolin.tech/api/weather?cityid=" + weatherId + "&key=6e70d0b6f6ec456abcff617c24096cba";
+        String weatherUrl = "http://guolin.tech/api/weather?cityid=" + weatherId + "&key=5cfa71f0523045cbbc2a915848c89ad4";
         HttpUtil.sendOkHttpRequest(weatherUrl, new Callback() {
             @Override
             public void onResponse(Call call, Response response) throws IOException {
@@ -204,7 +203,7 @@ public class WeatherActivity extends AppCompatActivity {
         String degree = weather.now.temperature + "℃";
         String weatherInfo = weather.now.more.info;
         titleCity.setText(cityName);
-        titleUpdateTime.setText(updateTime);
+        titleUpdateTime.setText("最近更新\n" + updateTime);
         degreeText.setText(degree);
         weatherInfoText.setText(weatherInfo);
         forecastLayout.removeAllViews();
